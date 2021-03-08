@@ -65,10 +65,11 @@ if(isset($_POST['btn_register'])){ // om man klickar på knappen "Spara ny anvä
         $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $_SESSION['hash'] = $hash; //Den hashade lösenordet sparas, för att kunna logga in under andra tillfällen.
 
-        $myfile = fopen("credentials.txt", "w") or die("Unable to open file!"); //Öppnar upp filen i skrivläge
+        //öppnar upp filen i "append" mode
+        $myfile = fopen("credentials.txt", "a") or die("Unable to open file!");//Öppnar upp filen i skrivläge
         $txt = $_POST['username'].";".$hash." \n"; //Tilldelar användarnamnet och hashade-lösenordet till variabeln
         fwrite($myfile, $txt); //Skriver användarnamnet och hashade-lösenordet till filen
-
+        
         echo "<div ><h3 class = 'accepted'> The new user has been saved </h3></div><br>";
     }
 } else if(isset($_POST['btn_login'])){ //Om man klickar på "logga in".
