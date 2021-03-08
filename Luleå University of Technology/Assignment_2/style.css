@@ -1,0 +1,117 @@
+/*
+@author: Elias Posluk
+Student-id: elipos-5
+Uppgift: uppgift 2, CSS
+@date 04/03/2021
+Luleå tekniska universitet
+Webbutveckling II - Skriptspråk och databaser
+*/
+
+/*Texten blir grön situationen stämmer*/
+.accepted{
+    text-align: center;
+    margin-left: 118px;
+    color: green;
+
+}
+/*Texten blir röd om något inte stämmer*/
+.wrong{
+    text-align: center;
+    margin-left: 118px;
+    color: red;
+}
+.label1 {
+    margin-right: 40%;
+}
+
+/*Knappen "logga in"*/
+.button1{
+    margin-top: -2cm;
+    margin-left: 117%;
+    padding: 7px 15px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.button1:hover{
+    background-color: green;
+}
+
+.button1:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/*Knappen "spara ny användare"*/
+.button2
+{
+    text-align: center;
+    margin-left: 102%;
+    margin-top: 2.8mm;
+    padding: 7px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.button2:hover
+{
+    background-color: #008CBA; /* Blå */
+}
+
+.button2:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.table
+{
+    text-align: center;
+    margin-left: 35%;
+    color: black;
+}
+/*Knappen för att logga ut*/
+.logOut
+{
+    text-align: center;
+    margin-left: 23cm;
+    padding: 7px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.logOut:hover
+{
+    background-color: #008CBA; /* Blå */
+}
+
+.logOut:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/*Texten för när man blir inloggad.*/
+.indexAccepted{
+    text-align: center;
+    margin-left: 650px;
+    color:green;
+}
