@@ -2,7 +2,7 @@
 @author: Elias Posluk
 Student-id: elipos-5
 Uppgift 2, logga ut sida
-@date 06/03/2021
+@date 26/04/2021
 Luleå tekniska universitet
 Webbutveckling II - Skriptspråk och databaser
 -->
