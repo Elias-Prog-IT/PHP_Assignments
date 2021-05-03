@@ -1,0 +1,58 @@
+<!-- 
+@author: Elias Posluk
+Student-id: elipos-5
+Uppgift 3, index.html
+@date 01/05/2021
+Luleå tekniska universitet
+Webbutveckling II - Skriptspråk och databaser
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <nav>
+		<ul><!--Menylista för de olika uppgifterna -->
+			<li><a class="active" href="index.html">Page 1</a></li>
+			<li><a href="page2.html">Page 2</a></li>
+			<li><a href="page3.html">Page 3</a></li>
+
+		</ul>
+	</nav>
+
+    <!-- Skriver ut texten för första sidan, där sorteringen för arrayen visas -->
+    <main>
+        <h1>An array with the interval 1-100</h1><br>
+        <h2>Unsorted Array</h2>
+        <p class="unsorted-array"></p>
+        <h2>Sorted Array</h2>
+        <p class="sorted-array"></p>
+    </main>
+
+     <!--  Javascript delen   -->
+     <!-- Här använder jag mig av while-loop för att få 10 unika/slumpade värden utskrivna med math.random() funktionen. 
+          Efter att ha skrivit ut den osorterade värderna så sorteras värderna efter storleksordningen liten till stor -->
+    <script>
+        let sortedArray = document.querySelector('.sorted-array');
+        let unsortedArray = document.querySelector('.unsorted-array');
+        let array = [];
+        //använder while-loop för att skriva ut 10st unika och slumpade tal 
+        while(array.length < 10){
+            const random = Math.floor(Math.random() * 100) +1;
+            if(array.indexOf(random) == -1){
+                array.push(random);
+            }
+        }
+        //Skriver ut den osorterade och sorterade arrayen
+        unsortedArray.textContent = array;
+        array.sort((a, b) => a - b);
+        sortedArray.textContent = array;
+    </script>
+</body>
+</html>
