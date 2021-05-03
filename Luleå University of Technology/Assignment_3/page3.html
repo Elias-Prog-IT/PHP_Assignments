@@ -1,0 +1,61 @@
+<!-- 
+@author: Elias Posluk
+Student-id: elipos-5
+Uppgift 3, page3.html
+@date 01/05/2021
+Luleå tekniska universitet
+Webbutveckling II - Skriptspråk och databaser
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 3</title>
+    <link rel="stylesheet" href="CSS/pages.css">
+</head>
+<body>
+    <nav>
+		<ul><!--Menylista för de olika uppgifterna -->
+			<li><a href="index.html">Page 1</a></li>
+			<li><a href="page2.html">Page 2</a></li>
+			<li><a class="active" href="page3.html">Page 3</a></li>
+		</ul>
+	</nav>
+
+    <main><!-- Skapar ett formulär med bara HTML5 som tar emot värden som; användarnamn, e-postadress, lösenord och kryssruta för att man har förstått villkoren-->
+		<form action="register.html">
+			<label>Userame</label>
+			<input type="text" name="username" class="username" required>
+			<label>Email</label>
+			<input type="email" name="email" class="email" required>
+            <label>Password</label>
+            <input type="password" name="password" minlength="6" class="password" required>
+            <label>Confirm Password</label>
+            <input type="password" name="confirm-password" minlength="6" class="confirm-password" required>
+            <div class="check-container">            
+                <input type="checkbox" class="check" required>
+                <p>I have read the terms and conditions</p>
+            </div>
+			<input type="submit" value="Register">
+		</form>
+	</main>
+     <!--  Javascript delen   -->
+     <!-- Här veriferar javascript bara inmatningen för lösenordsdelen, så att det stämmer överens med lösenordet man skrev innan.  -->
+    <script>
+        const password = document.querySelector('.password')
+        const confirmPassword = document.querySelector('.confirm-password');
+
+        function validatePassword(){
+            password.value != confirmPassword.value ?
+            confirmPassword.setCustomValidity("Passwords Don't Match") : confirmPassword.setCustomValidity('');
+        }
+
+        password.onchange = validatePassword;
+        confirmPassword.onchange = validatePassword;
+    </script>
+</body>
+</html>
