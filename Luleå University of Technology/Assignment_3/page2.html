@@ -1,0 +1,83 @@
+<!-- 
+@author: Elias Posluk
+Student-id: elipos-5
+Uppgift 3, page2.html
+@date 01/05/2021
+Luleå tekniska universitet
+Webbutveckling II - Skriptspråk och databaser
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="CSS/pages.css">
+</head>
+<body>
+    <nav>
+		<ul><!--Menylista för de olika uppgifterna -->
+			<li><a href="index.html">Page 1</a></li>
+			<li><a class="active" href="page2.html">Page 2</a></li>
+			<li><a href="page3.html">Page 3</a></li>
+		</ul>
+	</nav>
+
+    <main><!-- Skapar ett formulär som tar emot värden som; användarnamn, e-postadress, lösenord och kryssruta för att man har förstått villkoren-->
+		<form action="register.html">
+			<label>Userame</label>
+			<input type="text" name="username" class="username">
+			<label>Email</label>
+			<input type="text" name="email" class="email">
+            <label>Password</label>
+            <input type="password" name="password" minlength="6" class="password">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm-password" minlength="6" class="confirm-password">
+            <div class="check-container">            
+                <input type="checkbox" class="check">
+                <p>I have read the terms and conditions</p>
+            </div>
+			<input type="submit" value="Register">
+		</form>
+	</main>
+    <!--  Javascript delen   -->
+     <!-- Här veriferar javascript inmatningen som användaren gör för att se till att det stämmer överens med standarden som finns på sidan  -->
+    <script>
+        const username = document.querySelector('.username')
+        const email = document.querySelector('.email');
+        const password = document.querySelector('.password')
+        const confirmPassword = document.querySelector('.confirm-password');
+        const check = document.querySelector('.check');
+
+        function validateInformation(){
+            username.value == "" ? username.setCustomValidity("Username must be entered") : 
+            username.setCustomValidity("");    
+            
+            let emailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            
+            email.value == "" ? email.setCustomValidity("Email must be entered") : !emailFormat.test(email.value)
+            ? email.setCustomValidity("Email must be correctly formatted") : email.setCustomValidity("");
+
+            password.value == "" ? password.setCustomValidity("Password must be entered") : 
+            password.setCustomValidity("");
+
+            password.value != confirmPassword.value ?
+            confirmPassword.setCustomValidity("Passwords don't match") : confirmPassword.setCustomValidity('');
+
+            check.checked == false ?
+            check.setCustomValidity("Box must be ticked") : check.setCustomValidity('');
+        }
+
+        validateInformation();
+
+        username.onchange = validateInformation;
+        email.onchange = validateInformation;
+        password.onchange = validateInformation;
+        confirmPassword.onchange = validateInformation;
+        check.onclick = validateInformation;
+    </script>
+</body>
+</html>
